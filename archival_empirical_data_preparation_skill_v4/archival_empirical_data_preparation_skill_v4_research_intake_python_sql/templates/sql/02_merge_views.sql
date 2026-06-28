@@ -1,0 +1,23 @@
+-- Merge/join views.
+-- Codex must run duplicate-key checks before executing joins that may change row counts.
+
+-- Example m:1 join pattern:
+-- CREATE OR REPLACE VIEW analysis.analysis_base AS
+-- SELECT
+--     l.*,
+--     r.control_1,
+--     r.control_2
+-- FROM clean.left_panel l
+-- LEFT JOIN clean.right_covariates r
+--   ON l.unit_id = r.unit_id
+--  AND l.time_id = r.time_id;
+
+-- Example pre-aggregation to avoid many-to-many joins:
+-- CREATE OR REPLACE VIEW clean.right_covariates_unit_time AS
+-- SELECT
+--     unit_id,
+--     time_id,
+--     AVG(metric) AS metric_mean,
+--     COUNT(*) AS n_source_rows
+-- FROM clean.right_raw_event_level
+-- GROUP BY unit_id, time_id;

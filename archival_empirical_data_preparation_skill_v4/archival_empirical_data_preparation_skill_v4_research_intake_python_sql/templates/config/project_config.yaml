@@ -1,0 +1,72 @@
+project:
+  name: YOUR_PROJECT_NAME
+  researcher: YOUR_NAME
+  description: Short description of the empirical research project, copied from the confirmed research-design intake.
+  created_date: YYYY-MM-DD
+
+paths:
+  root: .
+  raw: data/raw
+  interim: data/interim
+  clean: data/clean
+  analysis: data/analysis
+  output: output
+  audits: output/audits
+  tables: output/tables
+  figures: output/figures
+  logs: logs
+  docs: docs
+
+python:
+  random_seed: 20260620
+  timezone: UTC
+
+sql:
+  engine: duckdb
+  database_path: data/analysis/analysis_database.duckdb
+  raw_schema: raw
+  clean_schema: clean
+  analysis_schema: analysis
+
+research_intake:
+  intake_yaml: output/audits/research_design_intake.yaml
+  hypothesis_register: output/audits/hypothesis_register.csv
+  construct_measurement_plan: output/audits/construct_measurement_plan.csv
+  identification_timing_plan: output/audits/identification_timing_plan.csv
+  research_context_brief: docs/research_context_brief.md
+  require_user_confirmation: true
+
+research_design:
+  unit_of_analysis: unit-time
+  unit_id: unit_id
+  time_id: time_id
+  time_grain: day
+  data_structure: panel
+  treatment_variable: null
+  event_date_variable: null
+  outcome_variables: []
+  key_independent_variables: []
+  moderator_variables: []
+  mediator_or_mechanism_variables: []
+  candidate_controls: []
+  fixed_effect_candidates: []
+  clustering_candidates: []
+
+sample:
+  start_date: null
+  end_date: null
+  eligibility_conditions: []
+  exclusion_conditions: []
+
+summary_tables:
+  main_table_title: "Descriptive Statistics of Key Variables"
+  decomposed_table_title: "Descriptive Statistics of Decomposed Outcomes"
+  use_common_n_row: true
+  add_n_column_if_variable_n_differs: true
+  default_decimals: 3
+  strip_trailing_zeros: true
+  thousands_separator: true
+  output_formats:
+    - csv
+    - tex
+    - md

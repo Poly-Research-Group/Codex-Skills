@@ -1,0 +1,121 @@
+# Research-design intake for archival empirical data preparation.
+# Complete this file before running the data-preparation pipeline.
+
+research_context:
+  project_title: ""
+  empirical_context: ""              # Platform, industry, organization, market, or institutional setting.
+  platform_or_industry: ""
+  focal_phenomenon: ""
+  research_questions:
+    - id: "RQ1"
+      question: ""
+  theoretical_lenses: []              # Example: platform ecosystems, network effects, attention theory, transaction-cost economics.
+  target_outlet_or_audience: ""
+  manuscript_stage: ""               # idea, proposal, data construction, analysis, revise-and-resubmit, etc.
+  causal_language_intended: null      # true/false/uncertain.
+
+hypotheses:
+  - id: "H1"
+    statement: ""
+    expected_direction: ""            # positive, negative, nonlinear, heterogeneous, exploratory, etc.
+    focal_relationship: ""            # X -> Y; X * M -> Y; X -> mediator -> Y; treatment -> outcome.
+    dependent_construct: ""
+    independent_construct: ""
+    treatment_or_event_construct: ""
+    moderator_construct: ""
+    mediator_or_mechanism_construct: ""
+    unit_level: ""
+    time_level: ""
+    temporal_order: ""
+    primary_test_type_expected: ""     # association, DID, event study, IV, mediation, moderation, etc.; tentative only.
+
+empirical_design:
+  estimand_or_test_goal: ""           # total effect, mechanism, heterogeneity, association, prediction, etc.
+  unit_of_analysis: ""                # What one row represents in analysis_ready.
+  data_structure: ""                  # cross-section, panel, repeated cross-section, event-time, cohort-time.
+  time_grain: ""                      # day, week, month, quarter, session, transaction time, none.
+  observation_window:
+    start: ""
+    end: ""
+  unit_id_candidates: []
+  time_id_candidates: []
+  treatment_or_event:
+    exists: false
+    treatment_variable: ""
+    event_date_variable: ""
+    treatment_assignment_level: ""
+    comparison_group_definition: ""
+    pre_period: ""
+    post_period: ""
+    no_anticipation_window: ""
+  identification_notes: ""
+
+raw_data_sources:
+  - source_id: "S1"
+    file_or_table_name: ""
+    source_type: ""                  # csv, parquet, json, api, sql_table, scraped_html, blockchain_node, etc.
+    source_owner_or_url: ""
+    acquisition_or_collection_date: ""
+    coverage_start: ""
+    coverage_end: ""
+    unit_in_source: ""
+    time_grain_in_source: ""
+    key_columns_available: []
+    timestamp_columns_available: []
+    known_limitations: ""
+
+variables:
+  dependent_variables: []
+  key_independent_variables: []
+  treatment_or_event_variables: []
+  moderators: []
+  mediators_or_mechanisms: []
+  candidate_controls: []
+  fixed_effect_candidates: []
+  clustering_candidates: []
+  sample_restriction_variables: []
+
+control_logic:
+  main_control_principle: ""          # Example: include only pre-treatment confounders and design controls.
+  known_bad_control_risks: []
+  variables_to_exclude_from_main_controls: []
+  mechanism_only_variables: []
+  robustness_only_controls: []
+
+timing_rules:
+  baseline_window: ""
+  lag_rules: []
+  lead_rules: []
+  variables_that_must_be_pre_treatment: []
+  variables_that_may_be_post_treatment: []
+  lookahead_bias_risks: []
+
+sample_frame:
+  inclusion_rules: []
+  exclusion_rules: []
+  treatment_or_exposure_groups: []
+  comparison_groups: []
+  expected_sample_size_notes: ""
+
+transformation_rules:
+  log_transformations: []
+  ihs_transformations: []
+  winsorization_or_trimming: []
+  standardization_or_scaling: []
+  aggregation_rules: []
+  text_or_network_measure_rules: []
+
+manuscript_outputs:
+  summary_statistics_variables: []
+  grouped_or_decomposed_summary_table_needed: false
+  grouped_table_grouping_variable: ""
+  variable_display_name_preferences: ""
+  decimal_rules: ""
+  notes: ""
+
+intake_status:
+  completed_by_user: false
+  confirmed_by_user: false
+  date_confirmed: ""
+  unresolved_blocking_items: []
+  user_approved_assumptions: []

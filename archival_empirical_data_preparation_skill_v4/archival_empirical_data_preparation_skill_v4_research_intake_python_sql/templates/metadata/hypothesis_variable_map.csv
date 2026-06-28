@@ -1,0 +1,4 @@
+hypothesis_id,construct,variable_name,variable_label,role,expected_sign,timing_relative_to_treatment,unit_level,time_level,source_table_or_file,construction_status,notes
+H1,,,,dependent_variable,,,,,,planned,
+H1,,,,key_independent_variable,,,,,,planned,
+H1,,,,pre_treatment_control,,,,,,planned,

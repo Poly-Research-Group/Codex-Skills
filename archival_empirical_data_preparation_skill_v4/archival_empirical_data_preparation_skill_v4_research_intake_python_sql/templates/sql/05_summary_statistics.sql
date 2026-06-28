@@ -1,0 +1,12 @@
+-- Optional SQL-based summary-statistics pattern.
+-- The Python script 08_export_isr_summary_tables.py is the main table generator because it uses
+-- summary_statistics_plan.csv for manuscript-facing variable names and descriptions.
+
+-- Example:
+-- SELECT
+--   AVG(variable_name) AS mean,
+--   STDDEV_SAMP(variable_name) AS standard_deviation,
+--   MIN(variable_name) AS minimum,
+--   MAX(variable_name) AS maximum,
+--   COUNT(variable_name) AS n
+-- FROM analysis.analysis_ready;

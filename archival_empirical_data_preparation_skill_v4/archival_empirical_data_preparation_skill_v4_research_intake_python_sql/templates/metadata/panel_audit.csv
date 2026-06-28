@@ -1,0 +1,1 @@
+unit_id_variable,time_id_variable,n_observations,n_units,n_time_periods,min_obs_per_unit,p25_obs_per_unit,median_obs_per_unit,p75_obs_per_unit,max_obs_per_unit,is_balanced,n_duplicate_unit_time_rows,n_time_gaps,entry_exit_detected,notes

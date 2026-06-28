@@ -1,0 +1,1 @@
+merge_id,left_table,right_table,join_type,keys,expected_cardinality,left_rows_before,right_rows_before,left_duplicate_key_rows,right_duplicate_key_rows,rows_after,matched_rows,unmatched_left_rows,unmatched_right_rows,match_rate,row_multiplication_detected,decision,notes

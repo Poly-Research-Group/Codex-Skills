@@ -1,0 +1,2 @@
+merge_id,left_table,right_table,expected_cardinality,left_keys,right_keys,required_match_rate,keep_unmatched_left,keep_unmatched_right,substantive_rationale
+M1,clean.left_table,clean.right_table,m:1,"unit_id,time_id","unit_id,time_id",0.95,yes,no,

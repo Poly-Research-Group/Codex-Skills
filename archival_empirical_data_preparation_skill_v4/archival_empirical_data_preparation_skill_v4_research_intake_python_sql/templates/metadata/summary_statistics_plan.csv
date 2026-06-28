@@ -1,0 +1,5 @@
+table_id,group_label,variable_name,display_name,description,include_in_main_table,include_in_decomposed_table,report_version,decimals,order,notes
+main,,treatment_var,"Treatment_{i,t}","A dummy variable equal to 1 after the focal treatment/event and 0 otherwise",yes,no,analysis,3,1,
+main,,outcome_var,"Outcome_{i,t}","Main dependent variable measured at the unit-time level",yes,no,analysis,3,2,
+decomposed,"1. Direct Mechanism",direct_outcome,"Direct_{i,t}","Directional or decomposed outcome measuring the direct mechanism",no,yes,analysis,3,1,
+decomposed,"2. Indirect Mechanism",indirect_outcome,"Indirect_{i,t}","Directional or decomposed outcome measuring the indirect mechanism",no,yes,analysis,3,2,

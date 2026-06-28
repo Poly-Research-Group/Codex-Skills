@@ -1,0 +1,2 @@
+source_id,raw_file_name,source_type,source_owner_or_url,acquisition_date,coverage_start,coverage_end,unit_in_raw_file,time_grain_in_raw_file,license_or_access_notes,import_script,known_limitations
+S1,,,,,,,,,,01_ingest_raw.py,

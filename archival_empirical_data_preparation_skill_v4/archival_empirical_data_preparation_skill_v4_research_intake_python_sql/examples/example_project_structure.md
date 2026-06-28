@@ -1,0 +1,29 @@
+# Example Project Structure
+
+```text
+project_root/
+  config/project_config.yaml
+  code/python/00_master.py
+  code/python/01_ingest_raw.py
+  code/python/02_clean_sources.py
+  code/python/03_build_keys_time.py
+  code/python/04_merge_build_analysis.py
+  code/python/05_construct_variables.py
+  code/python/06_define_samples.py
+  code/python/07_data_diagnostics.py
+  code/python/08_export_isr_summary_tables.py
+  code/python/09_export_analysis_package.py
+  code/python/utils.py
+  code/sql/00_schema.sql
+  code/sql/01_staging_views.sql
+  code/sql/02_merge_views.sql
+  code/sql/03_analysis_views.sql
+  data/raw/
+  data/analysis/analysis_database.duckdb
+  data/analysis/analysis_ready.dta
+  output/audits/
+  output/tables/summary_statistics_isr_main.csv
+  output/tables/summary_statistics_isr_main.tex
+  output/tables/summary_statistics_isr_main.md
+  docs/model_readiness_memo.md
+```
