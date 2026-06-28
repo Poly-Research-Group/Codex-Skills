@@ -1,0 +1,4 @@
+command_or_package,status,role,installation_or_version_note,official_or_community
+"xtreg, fe",planned,Primary FE model,Official Stata command; confirm Stata version and syntax,official
+margins,planned,Marginal effects and moderation interpretation,Official Stata command,official
+reghdfe,approved_optional,Optional HDFE route,Community command; include installation check,community

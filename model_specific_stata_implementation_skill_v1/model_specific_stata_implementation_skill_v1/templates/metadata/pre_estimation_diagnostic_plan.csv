@@ -1,0 +1,11 @@
+diagnostic_id,model_family,diagnostic_area,stata_commands,trigger,possible_adjustment,requires_checkpoint
+D001,all,dataset_integrity,datasignature; describe; codebook; count,before any model,stop if dataset cannot load or sample invalid,yes
+D002,panel,unit_time_key,isid unit_id time_id; duplicates report; xtset; xtdescribe; xtsum,panel or FE model,resolve duplicates or revise unit/time declaration,yes
+D003,all,missingness,misstable summarize; summarize; tab missing indicators,all models,revise sample or variable list if missingness changes sample unexpectedly,yes
+D004,all,multicollinearity,pwcorr; regress y x controls; estat vif,IVs and controls in linear approximation,inspect redundancy; do not drop focal variables without approval,yes
+D005,linear_panel_fe,within_variation,xtsum focal controls; tab omitted terms after estimation,FE models,use secondary estimator if no within variation,yes
+D006,all,cluster_fe_feasibility,levelsof cluster; tab cluster; contract cluster; summarize cluster sizes,clustered SE or FE,revise VCE or add sensitivity route,yes
+D007,count,outcome_support,"summarize y, detail; count if y<0; count if y==0; mean/variance",poisson/nb/xtpoisson/ppmlhdfe,switch family or transform if support invalid,yes
+D008,fractional,outcome_support,count if y<0 | y>1; count if y==0; count if y==1; summarize y,fracreg/betareg,fracreg if boundaries; betareg only for strictly interior values,yes
+D009,moderation,interaction_feasibility,summarize x z; xtsum x z interaction; testparm interactions,models with interactions,center/standardize continuous variables; revise margins grid,yes
+D010,mediation,timing_and_paths,tabulate treatment mediator outcome timing; bootstrap/nlcom readiness,mediate/sem/gsem/sequential equations,use mechanism evidence if formal mediation unsupported,yes

@@ -1,0 +1,11 @@
+rule_id,diagnostic_signal,severity,default_response,requires_user_approval,notes
+R001,analysis_ready.dta missing or cannot load,hard_stop,request file or corrected path,yes,No model implementation without dataset.
+R002,panel row key not unique,hard_stop,return to data-preparation/design-audit step,yes,Do not run panel models with duplicate unit-time rows.
+R003,focal variable has no variation after FE,hard_stop,recommend secondary estimator or revise hypothesis-specific FE,yes,Cannot test focal effect in the specified FE model.
+R004,control flagged as post-treatment/mediator/collider,hard_stop,remove from main model; possibly mechanism/robustness only,yes,Do not include bad controls in main model.
+R005,VIF > 10 for non-focal controls,high_risk,inspect redundancy; consider alternate control set robustness,yes,Threshold is heuristic; theory controls decision.
+R006,cluster count small,high_risk,add small-cluster sensitivity such as wild bootstrap if approved,yes,Do not claim conventional clustered SE are definitive.
+R007,count outcome has negative values,hard_stop,do not run count model; use signed/continuous model or reconstructed outcome,yes,Count models require nonnegative support.
+R008,"fractional outcome outside [0,1]",hard_stop,do not run fracreg/betareg until variable corrected,yes,Fractional models require bounded support.
+R009,many zeros/ones in fractional outcome,moderate_warning,prefer fracreg or two-part route; avoid betareg as primary,yes,Boundary mass matters.
+R010,nonlinear interaction present,moderate_warning,interpret via margins not raw interaction coefficient alone,yes,Use margins/marginsplot.

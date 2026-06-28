@@ -1,0 +1,22 @@
+command_or_package,status,role,installation_or_version_note,official_or_community
+xtset,planned,"Declare streamer-week panel","Official Stata command; requires encoded creator/week identifiers if string/date formats need conversion.",official
+"xtreg, fe",planned,"Primary linear FE route with creator clustering","Official Stata command; assumed Stata 19 / StataNow.",official
+"xtreg, fe absorb()",planned,"Native Stata 19 HDFE route for linear panel FE models with absorbed week FE","Use as main linear FE route in Stata 19; absorb week_id while panel FE handles creator.",official
+regress,planned,"Pooled descriptive robustness and generated-transform checks","Official Stata command.",official
+areg,planned,"Official absorbed-linear fallback for high-dimensional categorical variables where useful","In Stata 19, absorb() can absorb multiple categorical variables.",official
+poisson,planned,"Support-matched count outcome route","Official Stata command.",official
+xtpoisson,planned,"Panel count route where FE/count assumptions fit","Official Stata command.",official
+nbreg,planned,"Overdispersion robustness for count outcomes","Official Stata command.",official
+xtnbreg,planned,"Panel negative-binomial robustness where appropriate","Official Stata command.",official
+fracreg,planned,"Fractional-response robustness for mechanism shares","Official Stata command.",official
+margins,planned,"Marginal effects and moderation interpretation","Official Stata command.",official
+marginsplot,planned,"Moderation/predicted-outcome plots","Official Stata command.",official
+lincom,planned,"Direct contrasts and simple slopes","Official Stata command.",official
+nlcom,planned,"Indirect effects, VAF components, and nonlinear combinations","Official Stata command.",official
+bootstrap,planned,"Bootstrap sensitivity for mediation-style decomposition","Official Stata command.",official
+testnl,planned,"Nonlinear tests where needed","Official Stata command.",official
+reghdfe,approved_optional,"Legacy/community HDFE convenience and multiway clustering route","Stata 19 native absorb() is primary for linear FE; include command-existence check before optional use.",community
+ftools,approved_optional,"Dependency for reghdfe","Official route remains primary; include command-existence check before use.",community
+ppmlhdfe,approved_optional,"PPML-HDFE robustness for count/nonnegative outcomes","Official route remains primary; include command-existence check before use.",community
+boottest,approved_optional,"Wild-cluster bootstrap sensitivity","Official route remains primary; include command-existence check before use.",community
+estout/esttab,approved_optional,"Manuscript table export convenience","Official route remains primary; include command-existence check before use.",community

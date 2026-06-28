@@ -1,0 +1,45 @@
+project:
+  title: "PROJECT_TITLE"
+  root_dir: "PROJECT_ROOT"
+  stata_version: "19"
+  allow_community_commands: false
+
+inputs:
+  analysis_dta: "data/analysis_ready.dta"
+  stata_command_plan: "metadata/stata_command_plan.csv"
+  hypothesis_model_map: "metadata/hypothesis_model_map.csv"
+  diagnostics_requirements: "metadata/diagnostics_requirements.csv"
+  reporting_requirements: "metadata/reporting_requirements.csv"
+  robustness_plan: "metadata/robustness_plan.csv"
+  control_bad_control_audit: "metadata/control_bad_control_audit.csv"
+  fe_cluster_audit: "metadata/fixed_effect_clustering_readiness_audit.csv"
+  model_selection_handoff: "docs/model_selection_handoff_memo.md"
+
+manuals:
+  preferred_index_roots:
+    base: "https://www.stata-press.com/manuals/base-reference-manual/"
+    longitudinal_panel: "https://www.stata-press.com/manuals/longitudinal-panel-data-reference-manual/"
+    causal_treatment: "https://www.stata-press.com/manuals/causal-inference-and-treatment-effects-reference-manual/"
+    sem: "https://www.stata-press.com/manuals/structural-equation-modeling-reference-manual/"
+  cache_dir: "manuals/cache"
+  registry: "templates/metadata/manual_source_registry.csv"
+
+model_defaults:
+  decimal_places: 3
+  se_in_parentheses: true
+  significance_levels:
+    plus: 0.10
+    star1: 0.05
+    star2: 0.01
+    star3: 0.001
+  include_control_coefficients: true
+  use_factor_variables_for_interactions: true
+  table_style: "ISR_Zhao_2022"
+
+outputs:
+  logs_dir: "output/logs"
+  manual_dir: "output/manuals"
+  diagnostics_dir: "output/diagnostics"
+  tables_dir: "output/tables"
+  figures_dir: "output/figures"
+  implementation_dir: "output/implementation"
