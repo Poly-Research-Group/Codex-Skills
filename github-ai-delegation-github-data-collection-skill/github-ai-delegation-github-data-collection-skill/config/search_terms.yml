@@ -1,0 +1,27 @@
+main_invocation_regex:
+  - "(?i)(?<![\\w-])@copilot(?![\\w-])"
+
+robust_invocation_regex:
+  - "(?i)(?<![\\w-])@(copilot|codex|claude|devin)(?![\\w-])"
+
+self_disclosure_regex:
+  - "(?i)generated\\s+(by|with)\\s+(github\\s+)?copilot"
+  - "(?i)(ai|llm)[-\\s]?generated"
+  - "(?i)(ai|llm)[-\\s]?assisted"
+  - "(?i)(chatgpt|gpt-4|gpt-5|claude|claude code|cursor|devin|codex)"
+
+coauthor_regex:
+  - "(?i)co-authored-by:.*(copilot|codex|claude|devin|cursor)"
+
+reviewer_attribution_regex:
+  - "(?i)this\\s+looks\\s+ai[-\\s]?generated"
+  - "(?i)please\\s+do\\s+not\\s+use\\s+ai"
+  - "(?i)(copilot|chatgpt|llm|ai)\\s+(introduced|caused|generated|wrote)"
+  - "(?i)ai\\s+slop"
+
+repo_ai_instruction_paths:
+  - ".github/copilot-instructions.md"
+  - "AGENTS.md"
+  - "CLAUDE.md"
+  - ".cursorrules"
+  - "GEMINI.md"

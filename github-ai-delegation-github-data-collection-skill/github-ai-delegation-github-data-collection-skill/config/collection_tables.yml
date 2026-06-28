@@ -1,0 +1,29 @@
+raw_normalized_tables:
+  - raw_candidates.parquet
+  - repositories.parquet
+  - repository_languages.parquet
+  - repository_config_files.parquet
+  - pull_requests.parquet
+  - issues.parquet
+  - issue_comments.parquet
+  - issue_timeline_events.parquet
+  - pr_commits.parquet
+  - pr_changed_files.parquet
+  - pr_reviews.parquet
+  - pr_review_comments.parquet
+  - actor_profiles.parquet
+  - api_call_log.parquet
+
+processed_collection_tables:
+  - ai_trace_flags.parquet
+  - actor_classification.parquet
+  - episode_event_sequences.parquet
+  - repo_ai_readiness.parquet
+  - repo_context_snapshots.parquet
+  - pr_task_snapshots.parquet
+  - contributor_context_snapshots.parquet
+  - reviewer_context_snapshots.parquet
+  - dyad_context_snapshots.parquet
+  - file_context_snapshots.parquet
+  - temporal_context_snapshots.parquet
+  - neighbor_pr_episode_index.parquet

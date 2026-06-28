@@ -1,0 +1,28 @@
+strict_actor_logins: []
+strict_app_slugs: []
+
+candidate_actor_login_patterns:
+  - "(?i)copilot"
+  - "(?i)codex"
+  - "(?i)claude"
+  - "(?i)devin"
+  - "(?i)cursor"
+
+candidate_app_slug_patterns:
+  - "(?i)copilot"
+  - "(?i)codex"
+  - "(?i)claude"
+  - "(?i)devin"
+  - "(?i)cursor"
+
+conventional_bot_exclusions:
+  - "dependabot"
+  - "renovate"
+  - "github-actions"
+  - "codecov"
+  - "semantic-release"
+  - "pre-commit-ci"
+  - "snyk-bot"
+  - "imgbot"
+
+manual_review_required: true

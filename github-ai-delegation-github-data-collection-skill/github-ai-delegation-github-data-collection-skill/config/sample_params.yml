@@ -1,0 +1,48 @@
+project_name: github_ai_delegation_collection
+start_date: "2025-05-19"
+end_date: "2026-06-30"
+timezone: "UTC"
+
+scope:
+  github_public_data_only: true
+  allow_private_repos: false
+  allow_org_copilot_telemetry: false
+  allow_non_github_sources: false
+  allow_modeling_or_causal_analysis: false
+
+repo_filters:
+  min_stars_at_candidate_time: 50
+  min_prs_prior_180d: 20
+  exclude_forks: true
+  exclude_archived: true
+  exclude_empty_repos: true
+
+candidate_windows:
+  pre_context_days: 180
+  post_context_days: 180
+  neighbor_pr_window_days: 60
+
+main_trace_rules:
+  require_exact_invocation_for_main: true
+  require_subsequent_ai_activity_after_invocation: true
+  max_hours_after_invocation_for_ai_activity: 168
+  require_manual_actor_validation_for_platform_ai: true
+
+pilot:
+  start_date: "2025-05-19"
+  end_date: "2025-06-30"
+  max_candidates_to_hydrate: 500
+  manual_audit_main_positive_n: 200
+  manual_audit_weak_positive_n: 200
+  manual_audit_candidate_negative_n: 200
+
+hydration:
+  max_retries: 5
+  sleep_seconds_between_requests: 0.25
+  save_raw_json: true
+  overwrite_existing: false
+
+outputs:
+  raw_format: "json"
+  processed_format: "parquet"
+  include_text_in_raw_only: true
