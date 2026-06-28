@@ -1,0 +1,1 @@
+spec_id,hypothesis_id,model_role,dependent_variable,focal_independent_variable_or_treatment,moderator_terms,mediator_terms,controls,fixed_effects,random_effects,cluster_vce,weights,sample_restrictions,lags_leads,transformations,stata_command_template,interpretation_target,notes

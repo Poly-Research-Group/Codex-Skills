@@ -1,0 +1,49 @@
+project_label: "<PROJECT_LABEL>"
+research_context: "<SETTING_AND_PHENOMENON>"
+stata_version: "19"
+allow_community_commands: false
+analysis_ready_dataset: "<PATH_TO_ANALYSIS_READY_DTA>"
+design_audit_package: "<PATH_TO_DESIGN_AUDIT_PACKAGE>"
+
+hypotheses:
+  - hypothesis_id: "H1"
+    hypothesis_text: "<HYPOTHESIS_TEXT>"
+    claim_type: "<association|causal|mechanism|moderation|mediation|prediction|descriptive>"
+    dependent_variable: "<DV_NAME>"
+    dependent_variable_support: "<continuous|binary|count|fractional|ordinal|nominal|censored|duration|network|latent>"
+    key_independent_variable_or_treatment: "<IV_OR_TREATMENT>"
+    moderator: "<MODERATOR_OR_NONE>"
+    mediator_or_mechanism: "<MEDIATOR_OR_NONE>"
+    expected_direction: "<positive|negative|nonlinear|ambiguous>"
+    estimand: "<ATE|ATT|ATET|LATE|association|elasticity|hazard_ratio|marginal_effect|other>"
+
+data_structure:
+  unit_id: "<UNIT_ID>"
+  time_id: "<TIME_ID_OR_NONE>"
+  row_unit: "<UNIT_OF_ANALYSIS>"
+  time_grain: "<TIME_GRAIN_OR_NONE>"
+  structure_type: "<cross_section|panel|event_time_panel|repeated_cross_section|survival|time_series|other>"
+
+identification:
+  intended_design: "<OLS_HDFE|panel_FE|DID_event_study|IV|treatment_effects|RD|survival|dynamic_panel|multilevel|SEM|other>"
+  treatment_event_variable: "<TREATMENT_EVENT_OR_NONE>"
+  treatment_timing_variable: "<TIMING_VAR_OR_NONE>"
+  cohort_variable: "<COHORT_OR_NONE>"
+  comparison_group: "<COMPARISON_GROUP_DESCRIPTION>"
+  endogeneity_concerns: []
+  spillover_or_interference_concerns: "<YES_NO_AND_DESCRIPTION>"
+
+controls_fixed_effects_inference:
+  confirmed_controls: []
+  excluded_bad_controls: []
+  proposed_fixed_effects: []
+  proposed_cluster_dimensions: []
+  weights: "<NONE_OR_WEIGHT_VARIABLE>"
+
+outputs_requested:
+  narrative_report: true
+  hypothesis_model_map: true
+  diagnostics_plan: true
+  robustness_plan: true
+  stata_skeletons: true
+  implementation_skill_handoff: true

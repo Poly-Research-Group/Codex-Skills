@@ -1,0 +1,73 @@
+project:
+  project_label: "<PROJECT_LABEL>"
+  stata_version: "19"
+  allow_community_commands: false
+  analysis_ready_dta: "../analysis_package/data/analysis/analysis_ready.dta"
+  design_audit_package: "../design_audit_package"
+
+model_selection_contract:
+  require_upstream_design_audit: true
+  stop_if_design_audit_not_ready: true
+  require_user_confirmation_before_final_recommendation: true
+  require_checkpoint_log: true
+  required_checkpoints:
+    - C0_intake_confirmation
+    - C1_upstream_readiness
+    - C2_outcome_data_structure_classification
+    - C3_identification_estimand
+    - C4_primary_estimator_shortlist
+    - C5_specification_strategy
+    - C6_community_command_approval
+    - C7_robustness_reporting
+  default_output_folder: "stata_model_selection_package"
+
+classification_fields:
+  claim_types:
+    - association
+    - causal_ATE_ATT_ATET
+    - causal_LATE_IV
+    - mechanism_mediation
+    - moderation_heterogeneity
+    - prediction
+    - descriptive_decomposition
+  outcome_support:
+    - continuous
+    - log_continuous
+    - binary
+    - count
+    - nonnegative_skewed
+    - fractional_proportion
+    - bounded_continuous
+    - open_interval_proportion
+    - fractional_with_boundary_mass
+    - ordinal
+    - nominal_choice
+    - censored_truncated
+    - duration_survival
+    - spatial_network
+    - latent_construct
+  data_structures:
+    - cross_section
+    - repeated_cross_section
+    - panel
+    - event_time_panel
+    - cohort_time_panel
+    - dyadic_panel
+    - network_panel
+    - survival_risk_set
+    - aggregate_time_series
+
+inference_defaults:
+  small_cluster_warning_threshold: 50
+  hard_warning_cluster_threshold: 30
+  prefer_cluster_at_treatment_assignment_level: true
+  consider_multiway_clustering: true
+  consider_wild_cluster_bootstrap_if_few_clusters: true
+
+output:
+  create_narrative_report: true
+  create_csv_artifacts: true
+  create_stata_skeletons: true
+  create_handoff_memo: true
+  create_user_checkpoint_log: true
+  create_fractional_model_notes: true

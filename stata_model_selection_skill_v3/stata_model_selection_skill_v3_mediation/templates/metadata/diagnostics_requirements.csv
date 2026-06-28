@@ -1,0 +1,1 @@
+hypothesis_id,estimator_family,diagnostic_type,diagnostic_description,stata_command_or_method,required_before_estimation,required_after_estimation,pass_fail_rule,output_artifact,notes

@@ -1,0 +1,9 @@
+checkpoint_id,checkpoint_name,checkpoint_stage,summary_shown_to_user,user_decision,user_response_or_revision,assumptions_approved,unresolved_risks,conditional_recommendation_required,timestamp_utc,downstream_effect
+C0,Intake confirmation,before_model_selection,,,,,,,,
+C1,Upstream readiness,after_loading_design_audit,,,,,,,,
+C2,Outcome and data-structure classification,before_model_family_mapping,,,,,,,,
+C3,Identification and estimand,before_primary_estimator_shortlist,,,,,,,,
+C4,Primary-estimator shortlist,before_final_recommendation,,,,,,,,
+C5,Specification strategy,before_stata_skeleton,,,,,,,,
+C6,Community-command approval,before_user_written_command_recommendation,,,,,,,,
+C7,Robustness and reporting,before_final_export,,,,,,,,
