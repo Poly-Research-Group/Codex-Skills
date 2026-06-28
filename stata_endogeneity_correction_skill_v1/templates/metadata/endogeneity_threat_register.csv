@@ -1,0 +1,2 @@
+hypothesis_id,focal_relationship,dependent_variable,focal_variable_or_treatment,suspected_threat,threat_source_detail,severity,evidence_or_reason,candidate_methods,preferred_method,remaining_concerns,user_decision
+H1,X -> Y,y,x,reverse_causality,Y may influence X contemporaneously,high,Theory/timing suggests feedback,lagged_x;iv;did;dynamic_panel,TBD,Lagged X does not fully solve simultaneity,pending

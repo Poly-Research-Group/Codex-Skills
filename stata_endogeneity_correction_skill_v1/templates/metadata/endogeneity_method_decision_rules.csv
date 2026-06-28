@@ -1,0 +1,8 @@
+rule_id,condition,recommended_route,reject_or_warn,required_checkpoint
+E001,Focal variable has no within-unit variation under proposed unit FE,Do not use unit FE as main estimator for this focal effect; consider between/CRE/IV/design alternative,hard_stop,C4
+E002,Instrument lacks exclusion rationale,Do not run IV except exploratory with explicit warning,hard_stop,C1
+E003,DID has no pre-period support,Do not run DID as causal design,hard_stop,C1
+E004,PSM uses post-treatment covariates,Remove those variables or abandon PSM,hard_stop,C4
+E005,Dynamic panel has too many instruments relative to units,Reduce instrument count/collapse/restrict lags or do not report as primary,high_risk,C4
+E006,High VIF among controls but theory requires controls,Do not automatically drop; propose redundant-control analysis and robustness,moderate_warning,C4
+E007,Staggered DID with heterogeneous effects plausible,Run heterogeneity-aware DID or decomposition; interpret TWFE with caution,high_risk,C6

@@ -1,0 +1,10 @@
+method_family,required_before,required_after,hard_stop_condition,report_rows
+baseline_controls,missingness; correlation; VIF; control timing,robust/cluster SE; coefficient stability,Controls are post-treatment or colliders,N; R2; controls; SE type
+fixed_effects,within variation; FE absorption; cluster count,omitted variables; singleton drops; within R2,Focal variable absorbed/no within variation,FE rows; N units; within R2; cluster count
+lagged_x,time ordering; lag gaps; observations lost,alternative lag sensitivity,Invalid time index or future leakage,Lag definition; N lost
+instrumental_variables,instrument memo; first-stage feasibility; excluded instruments,firststage; weakrobust; endogenous; overid; reduced form,No relevance/exclusion rationale or weak first stage with no robust inference,First-stage F/stat; overid; weak robust test
+did,treatment timing; pre-period; controls; no anticipation,trendplots; ptrends; granger; bdecomp if staggered,No preperiod/control group/timing,Pretrend p; event plot; groups; clusters
+matching_weighting,pre-treatment covariates; overlap; no post-treatment covariates,balance summary; density/box; teoverlap; caliper sensitivity,No overlap or bad covariates,Balance stats; matched/weighted N
+dynamic_panel,N/T structure; lagged DV rationale; instrument plan,estat abond; estat sargan; instrument count; lag sensitivity,AR(2) rejection or instrument proliferation unresolved,AR(2); Sargan/Hansen; instruments
+sample_selection,selection rule; exclusion variable; missingness type,selection equation; rho/lambda; sensitivity,No selection process or no exclusion rationale,Selection equation; rho/lambda
+measurement_error,measure validity; reliability/instrument/alternative measures,alternative measure robustness; validation check,No reliability/instrument/alt measure support,Alternative measure estimates

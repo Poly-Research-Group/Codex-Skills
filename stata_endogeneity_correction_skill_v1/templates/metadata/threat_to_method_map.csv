@@ -1,0 +1,4 @@
+hypothesis_id,threat,method,stata_commands,required_assumptions,diagnostics,main_or_robustness,approval_status
+H1,omitted_time_invariant_heterogeneity,unit_fixed_effects,xtreg fe; reghdfe,Unobserved confounder is time-invariant within unit,within variation; absorbed variables; cluster count,main_or_robustness,pending
+H1,reverse_causality,lagged_explanatory_variable,xtreg with L.x,Temporal ordering meaningful; no anticipatory confounding,lag construction audit; observations lost; alternative lags,robustness,pending
+H1,endogenous_regressor,instrumental_variables,ivregress 2sls; xtivreg; ivreg2 optional,Relevance; exclusion; instrument exogeneity; monotonicity if LATE,firststage; weakrobust; overid; endogenous; reduced form; placebo,main_or_robustness,pending

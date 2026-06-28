@@ -1,0 +1,4 @@
+hypothesis_id,method_family,sensitivity_check,purpose,stata_command_shell,required_output,approval_status
+H1,instrumental_variables,alternative_instrument_set,Assess exclusion/relevance sensitivity,"ivregress 2sls y controls (x = z_alt), vce(cluster clust)",2SLS table + firststage,pending
+H1,did,placebo_treatment_date,Check anticipatory/spurious effects,replace placebo_treat = ...; didregress ...,placebo coefficient/table,pending
+H1,matching_weighting,caliper_sensitivity,Assess common-support dependence,"teffects psmatch ..., caliper(#)",balance and ATT/ATE table,pending

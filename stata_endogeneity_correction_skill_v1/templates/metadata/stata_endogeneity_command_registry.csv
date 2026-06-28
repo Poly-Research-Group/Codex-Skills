@@ -1,0 +1,31 @@
+command,method_family,official_or_community,manual_or_help_source,postestimation_or_diagnostics,notes
+regress,baseline_controls,official,Base Reference Manual / rregress.pdf,estat vif; estat hettest; predict residuals,"Use for baseline, VIF approximation, reduced form, first stage"
+"xtreg, fe",fixed_effects,official,Longitudinal-Data/Panel-Data Reference Manual / xtxtreg.pdf,xttest?; estimates; hausman where appropriate,Panel FE; cluster at unit or treatment level
+areg,absorbed_linear,official,Base Reference Manual / rareg.pdf,areg postestimation,Absorb categorical FE when appropriate
+reghdfe,high_dimensional_fe,community,which/help/ssc/network documentation,absorbed FE stats; singleton report,Use only if approved/installed; official absorb may be preferred in Stata 19+
+ivregress 2sls,instrumental_variables,official,Base Reference Manual / rivregress.pdf; rivregresspostestimation.pdf,estat firststage; estat endogenous; estat overid; estat weakrobust,Core IV route for linear outcomes
+xtivreg,panel_iv,official,Longitudinal-Data/Panel-Data Reference Manual / xtxtivreg.pdf,xtivreg postestimation,Panel IV FE/RE route
+ivreg2,instrumental_variables,community,which/help/ssc describe ivreg2,weak IV tests; overid; first stage,Optional legacy/convenience route with robust diagnostics
+cfregress,control_function,official,Base Reference Manual / rcfregress.pdf,first option; control-function terms,Linear outcome with endogenous regressors
+cfprobit,control_function,official,Base Reference Manual / rcfprobit.pdf,margins; control-function terms,Binary outcome with endogenous regressors
+etregress,endogenous_treatment,official,Causal Inference Manual / causaletregress.pdf,first; margins r.treat,Linear outcome with endogenous binary treatment
+etpoisson,endogenous_treatment_count,official,Causal Inference Manual / causaletpoisson.pdf,postestimation; margins,Count outcome with endogenous treatment
+didregress,did,official,Causal Inference Manual / causaldidregress.pdf,estat trendplots; estat ptrends; estat granger; estat bdecomp,Repeated cross-section DID/DDD
+xtdidregress,panel_did,official,Causal/Panel manuals / causaldidregress.pdf,estat trendplots; estat ptrends; estat granger; estat bdecomp,Panel DID/DDD
+hdidregress,heterogeneous_did,official,Causal Inference Manual / causalhdidregress.pdf,hdidregress postestimation,Heterogeneous DID; verify Stata version
+csdid,heterogeneous_did,community,which/help/ssc/net documentation,event plots; aggregation,Optional Callaway-SantAnna route if approved
+eventstudyinteract,event_study,community,which/help/ssc/net documentation,cohort-interaction event estimates,Optional Sun-Abraham route if approved
+teffects psmatch,matching,official,Causal Inference Manual / causalteffectspsmatch.pdf,tebalance summarize; tebalance density; teoverlap,Selection on observables
+teffects ipw,weighting,official,Causal Inference Manual / causalteffectsipw.pdf,tebalance summarize; tebalance overid; teoverlap,IPW treatment effects
+teffects ipwra,doubly_robust,official,Causal Inference Manual / causalteffectsipwra.pdf,tebalance summarize; teoverlap,Doubly robust if either treatment or outcome model correct
+teffects aipw,doubly_robust,official,Causal Inference Manual / causalteffectsaipw.pdf,tebalance summarize; teoverlap,Augmented IPW
+psmatch2,matching,community,which/help/ssc describe psmatch2,pstest; common support,Optional; official teffects preferred by default
+xtabond,dynamic_panel,official,Longitudinal-Data/Panel-Data Manual / xtxtabond.pdf,estat abond; estat sargan,Arellano-Bond; many N/few T
+xtdpdsys,dynamic_panel_system_gmm,official,Longitudinal-Data/Panel-Data Manual / xtxtdpdsys.pdf,estat abond; estat sargan,Arellano-Bover/Blundell-Bond
+xtabond2,dynamic_panel,community,which/help/ssc describe xtabond2,AR tests; Hansen; instrument count,Optional; powerful but requires careful instrument control
+heckman,sample_selection,official,Base Reference Manual / rheckman.pdf,heckman postestimation; mills/lambda/rho,Outcome observed only after selection
+eivreg,measurement_error,official,Base Reference Manual / reivreg.pdf,eivreg postestimation,Requires reliability ratio or known measurement error information
+margins,effects_interpretation,official,Base Reference Manual / rmargins.pdf,marginsplot; contrasts,Use for interactions/nonlinear effects
+etable,table_export,official,Base Reference Manual / retable.pdf,collect integration,Official table export route
+outreg2,table_export,community,which/help/ssc describe outreg2,n/a,Optional legacy table export
+esttab,table_export,community,which/help/ssc describe estout,n/a,Optional table export
