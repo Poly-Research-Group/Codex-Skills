@@ -1,0 +1,1 @@
+variable,role,measurement_window,relative_timing,source_table,uses_lag,uses_lead,rolling_window,future_information_risk,post_treatment_risk,mechanical_outcome_overlap_risk,status,recommended_action,notes

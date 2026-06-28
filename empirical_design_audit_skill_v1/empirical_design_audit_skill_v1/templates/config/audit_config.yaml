@@ -1,0 +1,93 @@
+# audit_config.yaml
+# Copy this file to config/audit_config.yaml and replace all placeholders before running the design audit.
+
+project:
+  title: "PROJECT_TITLE"
+  empirical_setting: "PLATFORM_OR_INDUSTRY_CONTEXT"
+  focal_phenomenon: "FOCAL_PHENOMENON"
+  research_question: "MAIN_RESEARCH_QUESTION"
+  intended_claim_strength: "associational"   # associational | causal | predictive | descriptive | mechanism
+
+data:
+  analysis_dataset_path: "data/analysis/analysis_ready.parquet"
+  analysis_dataset_format: "parquet"          # parquet | csv | dta | stata
+  sql_database_path: "data/analysis/analysis_database.duckdb"
+  metadata_root: "output/audits"
+  output_root: "design_audit_package"
+
+design:
+  data_structure: "panel"                     # cross_section | repeated_cross_section | panel | event_time | cohort_time | dyadic_panel | survival | mixed
+  unit_of_analysis: "UNIT_TIME_DESCRIPTION"
+  row_key: ["unit_id", "time_id"]
+  unit_id: "unit_id"
+  time_id: "time_id"
+  time_grain: "day"
+  event_time_id: "event_time"                 # optional
+  dyad_id: null                               # optional
+  directed_dyad: null                         # true | false | null
+  intended_design_family: ["panel_fe"]        # association | panel_fe | did_event_study | iv | matching | rd | survival | dynamic_panel | network_spillover | count | limited_dv
+
+hypotheses:
+  - hypothesis_id: "H1"
+    statement: "HYPOTHESIS_STATEMENT"
+    relationship_type: "main_effect"          # main_effect | moderation | mediation | mechanism | heterogeneity | spillover | dynamic_effect | exploratory
+    expected_direction: "+"                   # + | - | nonmonotonic | mixed | exploratory
+    dependent_variable: "dv"
+    key_independent_variable: "main_iv"
+    moderator: null
+    mediator: null
+    estimand_target: "conditional_association" # conditional_association | ATT | ATE | ATET | LATE | elasticity | marginal_effect | hazard_ratio | odds_ratio | IRR
+
+variables:
+  outcomes: ["dv"]
+  key_independent_variables: ["main_iv"]
+  treatments: []
+  treatment_time: null
+  event_time: null
+  moderators: []
+  mediators: []
+  mechanisms: []
+  candidate_controls: []
+  fixed_effects: []
+  clustering_dimensions: []
+  sample_indicators: []
+  weights: null
+  exposure_or_offset: null
+
+metadata_files:
+  research_context_brief: "docs/research_context_brief.md"
+  model_readiness_memo: "docs/model_readiness_memo.md"
+  research_design_intake: "output/audits/research_design_intake.yaml"
+  hypothesis_register: "output/audits/hypothesis_register.csv"
+  construct_measurement_plan: "output/audits/construct_measurement_plan.csv"
+  hypothesis_variable_map: "output/audits/hypothesis_variable_map.csv"
+  identification_timing_plan: "output/audits/identification_timing_plan.csv"
+  control_variable_audit: "output/audits/control_variable_audit.csv"
+  variable_construction_log: "output/audits/variable_construction_log.csv"
+  sample_flow: "output/audits/sample_flow.csv"
+  merge_audit: "output/audits/merge_audit.csv"
+  missingness_audit: "output/audits/missingness_audit.csv"
+  panel_audit: "output/audits/panel_audit.csv"
+
+thresholds:
+  key_variable_missing_rate_warn: 0.10
+  key_variable_missing_rate_stop: 0.30
+  min_clusters_warn: 30
+  min_treated_units_warn: 20
+  min_control_units_warn: 20
+  max_duplicate_row_key_rate_stop: 0.0
+  min_pre_periods_for_event_study_warn: 3
+  max_singleton_fe_share_warn: 0.10
+
+figures:
+  create_missingness_plot: true
+  create_sample_flow_plot: true
+  create_treatment_timing_plot: true
+  create_event_time_support_plot: true
+  create_descriptive_pretrend_plot: true
+  create_overlap_plot: true
+
+execution:
+  random_seed: 20260620
+  fail_on_hard_stop: true
+  allow_partial_metadata: false

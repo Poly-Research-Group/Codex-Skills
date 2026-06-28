@@ -1,0 +1,1 @@
+step_id,restriction_or_issue,n_observations_before,n_observations_after,n_units_before,n_units_after,observations_lost,units_lost,loss_rate,loss_by_treatment_flag,restriction_defined_pre_outcome,severity,status,notes
