@@ -1,0 +1,6 @@
+interface:
+  display_name: "IS Literature Review"
+  short_description: "Project-specific IS literature scouting and paper synthesis with approval-gated searches."
+  default_prompt: "Use the is-literature-review skill. Ask me for my project idea if needed, propose keywords and queries, then wait for my approval before searching."
+policy:
+  allow_implicit_invocation: true
